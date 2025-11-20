@@ -34,7 +34,6 @@ public class HelloApplication extends Application {
 
         var add = new Button("+");
         add.setOnMouseClicked(_ -> calculate("+"));
-
         GridPane.setConstraints(add, 0, 1);
 
         var subtract = new Button("-");
@@ -43,7 +42,6 @@ public class HelloApplication extends Application {
 
         var multiply = new Button("*");
         multiply.setOnMouseClicked(_ -> calculate("*"));
-
         GridPane.setConstraints(multiply, 2, 1);
 
         var divide = new Button("/");
