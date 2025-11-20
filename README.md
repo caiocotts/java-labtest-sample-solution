@@ -1,5 +1,7 @@
 # Basic Calculator (Focus: Controls, Event Handling, Simple Logic)
 
+![Alt Text](./demo.gif)
+
 ***
 
 ## Lab Test: Simple JavaFX Calculator
