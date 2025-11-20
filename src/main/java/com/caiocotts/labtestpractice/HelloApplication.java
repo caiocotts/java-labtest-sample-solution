@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class HelloApplication extends Application {
     final static TextField number1 = new TextField();
     final static TextField number2 = new TextField();
-    final static Label outputField = new Label();
+    final static Label output = new Label();
 
     @Override
     public void start(Stage stage) {
@@ -38,10 +38,10 @@ public class HelloApplication extends Application {
         var divide = new Button("/");
         divide.setOnMouseClicked(_ -> calculate("/"));
 
-        GridPane.setConstraints(outputField, 0, 2);
+        GridPane.setConstraints(output, 0, 2);
 
         buttons.getChildren().addAll(add, subtract, multiply, divide);
-        vBox.getChildren().addAll(textFields, buttons, outputField);
+        vBox.getChildren().addAll(textFields, buttons, output);
         pane.getChildren().addAll(vBox);
 
         Scene scene = new Scene(pane);
@@ -56,22 +56,22 @@ public class HelloApplication extends Application {
             num2 = Double.parseDouble(number2.getText());
 
         } catch (Exception _) {
-            outputField.setText("Invalid number argument entered");
+            output.setText("Invalid number argument entered");
             return;
         }
 
         switch (op) {
             case "+":
-                outputField.setText("" + (num1 + num2));
+                output.setText("" + (num1 + num2));
                 break;
             case "-":
-                outputField.setText("" + (num1 - num2));
+                output.setText("" + (num1 - num2));
                 break;
             case "*":
-                outputField.setText("" + (num1 * num2));
+                output.setText("" + (num1 * num2));
                 break;
             case "/":
-                outputField.setText("" + (num1 / num2));
+                output.setText("" + (num1 / num2));
                 break;
         }
     }
