@@ -2,11 +2,13 @@
 
 ![Alt Text](./demo.gif)
 
+[This](https://github.com/caiocotts/java-labtest-sample-solution/blob/308169159768cebf9c289210e89748a050b3147a/src/main/java/com/caiocotts/labtestpractice/HelloApplication.java) is the original solution I came up with within the allotted 60 minutes (~30 mins total). [This](https://github.com/caiocotts/java-labtest-sample-solution/blob/8f6e031678c6d5fbbf7eec12f2423caf05af0fce/src/main/java/com/caiocotts/labtestpractice/HelloApplication.java) version is a revision fixing an error, where inputs were being parsed to integers instead of doubles (this would have cost me real grades during the exam). Any code you see on the repo now is stuff I changed after to make the code cleaner to read and less horrible.
+
 ***
 
 ## Lab Test: Simple JavaFX Calculator
 
-### Time Allotment: 60 minutes (code in this repo was created in ~30 mins. not pretty but feature complete)
+### Time Allotment: 60 minutes
 
 ### Goal: Create a simple graphical calculator application using JavaFX.
 
