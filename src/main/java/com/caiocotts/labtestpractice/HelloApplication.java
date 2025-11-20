@@ -27,16 +27,16 @@ public class HelloApplication extends Application {
         textFields.getChildren().addAll(number1, number2);
 
         var add = new Button("+");
-        add.setOnMouseClicked(_ -> calculate("+"));
+        add.setOnAction(_ -> calculate("+"));
 
         var subtract = new Button("-");
-        subtract.setOnMouseClicked(_ -> calculate("-"));
+        subtract.setOnAction(_ -> calculate("-"));
 
         var multiply = new Button("*");
-        multiply.setOnMouseClicked(_ -> calculate("*"));
+        multiply.setOnAction(_ -> calculate("*"));
 
         var divide = new Button("/");
-        divide.setOnMouseClicked(_ -> calculate("/"));
+        divide.setOnAction(_ -> calculate("/"));
 
         GridPane.setConstraints(output, 0, 2);
 
