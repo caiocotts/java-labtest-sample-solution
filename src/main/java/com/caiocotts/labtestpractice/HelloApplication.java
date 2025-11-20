@@ -13,6 +13,10 @@ import javafx.stage.Stage;
 
 
 public class HelloApplication extends Application {
+    final static TextField number1 = new TextField();
+    final static TextField number2 = new TextField();
+    final static Label outputField = new Label();
+
     @Override
     public void start(Stage stage) {
 
@@ -21,80 +25,33 @@ public class HelloApplication extends Application {
         var hBox = new HBox();
         var vBox = new VBox();
 
-
-        var number1 = new TextField();
-        var number2 = new TextField();
         var errorMessage = new Label();
-        var outputField = new Label();
 
         hBox.getChildren().addAll(number1, number2);
 
         GridPane.setConstraints(number1, 0, 0);
         GridPane.setConstraints(number2, 1, 0);
-        var add = new Button("+");
-        add.setOnMouseClicked(_ -> {
-            double num1, num2;
-            try {
-                num1 = Double.parseDouble(number1.getText());
-                num2 = Double.parseDouble(number2.getText());
 
-            } catch (Exception _) {
-                outputField.setText("Invalid number argument entered");
-                return;
-            }
-            outputField.setText("" + (num1 + num2));
-        });
+        var add = new Button("+");
+        add.setOnMouseClicked(_ -> calculate("+"));
 
         GridPane.setConstraints(add, 0, 1);
 
         var subtract = new Button("-");
-        subtract.setOnMouseClicked(_ -> {
-            double num1, num2;
-            try {
-                num1 = Double.parseDouble(number1.getText());
-                num2 = Double.parseDouble(number2.getText());
-
-            } catch (Exception _) {
-                outputField.setText("Invalid number argument entered");
-                return;
-            }
-            outputField.setText("" + (num1 - num2));
-        });
+        subtract.setOnMouseClicked(_ -> calculate("-"));
         GridPane.setConstraints(subtract, 1, 1);
 
         var multiply = new Button("*");
-        multiply.setOnMouseClicked(_ -> {
-            double num1, num2;
-            try {
-                num1 = Double.parseDouble(number1.getText());
-                num2 = Double.parseDouble(number2.getText());
-
-            } catch (Exception _) {
-                outputField.setText("Invalid number argument entered");
-                return;
-            }
-            outputField.setText("" + (num1 * num2));
-        });
+        multiply.setOnMouseClicked(_ -> calculate("*"));
 
         GridPane.setConstraints(multiply, 2, 1);
 
         var divide = new Button("/");
-        divide.setOnMouseClicked(_ -> {
-            double num1, num2;
-            try {
-                num1 = Double.parseDouble(number1.getText());
-                num2 = Double.parseDouble(number2.getText());
-
-            } catch (Exception _) {
-                outputField.setText("Invalid number argument entered");
-                return;
-            }
-            outputField.setText("" + (num1 / num2));
-        });
+        divide.setOnMouseClicked(_ -> calculate("/"));
         GridPane.setConstraints(divide, 3, 1);
 
-
         GridPane.setConstraints(outputField, 0, 2);
+
         gridPane.getChildren().addAll(add, subtract, multiply, divide);
         vBox.getChildren().addAll(errorMessage, hBox, gridPane, outputField);
         pane.getChildren().addAll(vBox);
@@ -102,5 +59,34 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(pane);
         stage.setScene(scene);
         stage.show();
+    }
+
+    private static void calculate(String op) {
+        {
+            double num1, num2;
+            try {
+                num1 = Double.parseDouble(number1.getText());
+                num2 = Double.parseDouble(number2.getText());
+
+            } catch (Exception _) {
+                outputField.setText("Invalid number argument entered");
+                return;
+            }
+
+            switch (op) {
+                case "+":
+                    outputField.setText("" + (num1 + num2));
+                    break;
+                case "-":
+                    outputField.setText("" + (num1 + -num2));
+                    break;
+                case "*":
+                    outputField.setText("" + (num1 * num2));
+                    break;
+                case "/":
+                    outputField.setText("" + (num1 / num2));
+                    break;
+            }
+        }
     }
 }
