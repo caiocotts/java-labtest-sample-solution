@@ -60,31 +60,29 @@ public class HelloApplication extends Application {
     }
 
     private static void calculate(String op) {
-        {
-            double num1, num2;
-            try {
-                num1 = Double.parseDouble(number1.getText());
-                num2 = Double.parseDouble(number2.getText());
+        double num1, num2;
+        try {
+            num1 = Double.parseDouble(number1.getText());
+            num2 = Double.parseDouble(number2.getText());
 
-            } catch (Exception _) {
-                outputField.setText("Invalid number argument entered");
-                return;
-            }
+        } catch (Exception _) {
+            outputField.setText("Invalid number argument entered");
+            return;
+        }
 
-            switch (op) {
-                case "+":
-                    outputField.setText("" + (num1 + num2));
-                    break;
-                case "-":
-                    outputField.setText("" + (num1 + -num2));
-                    break;
-                case "*":
-                    outputField.setText("" + (num1 * num2));
-                    break;
-                case "/":
-                    outputField.setText("" + (num1 / num2));
-                    break;
-            }
+        switch (op) {
+            case "+":
+                outputField.setText("" + (num1 + num2));
+                break;
+            case "-":
+                outputField.setText("" + (num1 + -num2));
+                break;
+            case "*":
+                outputField.setText("" + (num1 * num2));
+                break;
+            case "/":
+                outputField.setText("" + (num1 / num2));
+                break;
         }
     }
 }
