@@ -38,8 +38,8 @@ public class HelloApplication extends Application {
         add.setOnMouseClicked(_ -> {
             double num1, num2;
             try {
-                num1 = Integer.parseInt(number1.getText());
-                num2 = Integer.parseInt(number2.getText());
+                num1 = Double.parseDouble(number1.getText());
+                num2 = Double.parseDouble(number2.getText());
 
             } catch (Exception _) {
                 outputField.setText("Invalid number argument entered");
@@ -54,8 +54,8 @@ public class HelloApplication extends Application {
         subtract.setOnMouseClicked(_ -> {
             double num1, num2;
             try {
-                num1 = Integer.parseInt(number1.getText());
-                num2 = Integer.parseInt(number2.getText());
+                num1 = Double.parseDouble(number1.getText());
+                num2 = Double.parseDouble(number2.getText());
 
             } catch (Exception _) {
                 outputField.setText("Invalid number argument entered");
@@ -69,8 +69,8 @@ public class HelloApplication extends Application {
         multiply.setOnMouseClicked(_ -> {
             double num1, num2;
             try {
-                num1 = Integer.parseInt(number1.getText());
-                num2 = Integer.parseInt(number2.getText());
+                num1 = Double.parseDouble(number1.getText());
+                num2 = Double.parseDouble(number2.getText());
 
             } catch (Exception _) {
                 outputField.setText("Invalid number argument entered");
@@ -85,8 +85,8 @@ public class HelloApplication extends Application {
         divide.setOnMouseClicked(_ -> {
             double num1, num2;
             try {
-                num1 = Integer.parseInt(number1.getText());
-                num2 = Integer.parseInt(number2.getText());
+                num1 = Double.parseDouble(number1.getText());
+                num2 = Double.parseDouble(number2.getText());
 
             } catch (Exception _) {
                 outputField.setText("Invalid number argument entered");
