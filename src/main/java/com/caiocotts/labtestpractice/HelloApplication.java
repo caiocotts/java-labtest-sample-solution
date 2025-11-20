@@ -5,7 +5,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -38,8 +37,6 @@ public class HelloApplication extends Application {
         var divide = new Button("/");
         divide.setOnAction(_ -> calculate("/"));
 
-        GridPane.setConstraints(output, 0, 2);
-
         buttons.getChildren().addAll(add, subtract, multiply, divide);
         vBox.getChildren().addAll(textFields, buttons, output);
         pane.getChildren().addAll(vBox);
@@ -54,7 +51,6 @@ public class HelloApplication extends Application {
         try {
             num1 = Double.parseDouble(number1.getText());
             num2 = Double.parseDouble(number2.getText());
-
         } catch (Exception _) {
             output.setText("Invalid number argument entered");
             return;
