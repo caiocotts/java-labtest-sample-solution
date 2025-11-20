@@ -75,7 +75,7 @@ public class HelloApplication extends Application {
                 outputField.setText("" + (num1 + num2));
                 break;
             case "-":
-                outputField.setText("" + (num1 + -num2));
+                outputField.setText("" + (num1 - num2));
                 break;
             case "*":
                 outputField.setText("" + (num1 * num2));
